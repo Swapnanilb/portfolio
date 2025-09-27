@@ -10,7 +10,7 @@ const Hero = () => {
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-primary">
       <div className="absolute inset-0 bg-gradient-to-br from-accent/10 to-accent-green/10"></div>
-      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20" style={{backgroundImage: `url(${process.env.PUBLIC_URL}/assets/Hero_img.png)`}}></div>
+      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20 md:opacity-20 sm:opacity-40" style={{backgroundImage: `url(${process.env.PUBLIC_URL}/assets/Hero_img.png)`}}></div>
       
       <div className="container mx-auto px-6 text-center z-10">
         <motion.h1

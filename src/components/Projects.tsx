@@ -79,7 +79,21 @@ const Projects = () => {
                 
                 <div className="mb-4 flex-grow">
                   <h4 className="text-accent text-sm font-semibold mb-2">Tech Stack:</h4>
-                  <div className="space-y-2">
+                  
+                  {/* Mobile: GitHub-style tags */}
+                  <div className="md:hidden flex flex-wrap gap-1.5">
+                    {project.tech.map((tech) => (
+                      <span 
+                        key={tech.name}
+                        className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-accent/10 text-accent border border-accent/20"
+                      >
+                        {tech.name}
+                      </span>
+                    ))}
+                  </div>
+                  
+                  {/* Desktop: Progress bars */}
+                  <div className="hidden md:block space-y-2">
                     {project.tech.map((tech) => (
                       <div key={tech.name} className="flex items-center justify-between">
                         <span className="text-secondary/80 text-xs font-medium">{tech.name}</span>
