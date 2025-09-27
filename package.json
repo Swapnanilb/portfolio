@@ -1,7 +1,7 @@
 {
   "name": "developer-portfolio",
   "version": "0.1.0",
-  "homepage": "https://Swapnanilb.github.io/myPortfolio",
+  "homepage": "https://Swapnanilb.github.io/portfolio",
   "private": true,
   "dependencies": {
     "@types/node": "^16.18.0",
