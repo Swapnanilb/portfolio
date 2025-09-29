@@ -1,11 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 
 const Hero = () => {
-  const [showResumeModal, setShowResumeModal] = useState(false);
-
   const scrollToContact = () => {
     document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const downloadResume = () => {
+    const link = document.createElement('a');
+    link.href = `${process.env.PUBLIC_URL}/assets/Resume/Swapnanil Basak's Resume.pdf`;
+    link.download = "Swapnanil_Basak_Resume.pdf";
+    link.click();
   };
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-primary">
@@ -47,7 +52,7 @@ const Hero = () => {
           className="flex flex-col sm:flex-row gap-4 justify-center"
         >
           <button 
-            onClick={() => setShowResumeModal(true)}
+            onClick={downloadResume}
             className="px-8 py-3 bg-accent text-primary font-semibold rounded-lg hover:bg-accent/80 transition-all duration-300 hover:shadow-lg hover:shadow-accent/25"
           >
             Download Resume
@@ -71,25 +76,7 @@ const Hero = () => {
         </motion.div>
       </div>
 
-      {/* Resume Modal */}
-      {showResumeModal && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className="bg-primary border border-secondary/20 rounded-xl p-6 max-w-sm mx-4 text-center"
-          >
-            <h3 className="text-xl font-semibold text-secondary mb-3">Resume Not Available</h3>
-            <p className="text-secondary/70 mb-4">Will be updated soon!</p>
-            <button
-              onClick={() => setShowResumeModal(false)}
-              className="px-6 py-2 bg-accent text-primary rounded-lg hover:bg-accent/80 transition-all duration-300"
-            >
-              Close
-            </button>
-          </motion.div>
-        </div>
-      )}
+
     </section>
   );
 };

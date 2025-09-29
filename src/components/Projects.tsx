@@ -64,7 +64,7 @@ const Projects = () => {
               transition={{ duration: 0.8, delay: index * 0.2 }}
               whileHover={{ scale: 1.02, y: -5 }}
               viewport={{ once: true }}
-              className="group relative bg-gradient-to-br from-secondary/5 to-accent/5 backdrop-blur-sm border border-secondary/10 rounded-2xl p-6 hover:shadow-2xl hover:shadow-accent/20 hover:border-accent/30 transition-all duration-500 overflow-hidden aspect-square flex flex-col"
+              className="group relative bg-gradient-to-br from-secondary/5 to-accent/5 backdrop-blur-sm border border-secondary/10 rounded-2xl p-6 hover:shadow-2xl hover:shadow-accent/20 hover:border-accent/30 transition-all duration-500 overflow-hidden md:aspect-square flex flex-col"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               
