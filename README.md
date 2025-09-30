@@ -33,10 +33,11 @@ A modern, responsive developer portfolio showcasing my projects and skills. Buil
 
 ## 🎨 Color Scheme
 
-- **Primary**: #222831 (Dark background)
-- **Secondary**: #EEEEEE (Light text)
-- **Accent**: #00D9FF (Neon blue)
-- **Accent Green**: #00FF88 (Neon green)
+- **Background**: #0D1117 (Deep charcoal)
+- **Card Background**: #161B22 (Card sections)
+- **Primary Accent**: #58A6FF (Soft blue)
+- **Secondary Accent**: #FF7B72 (Warm coral)
+- **Text**: #E6EDF3 (Off-white)
 
 ## 📧 Contact
 

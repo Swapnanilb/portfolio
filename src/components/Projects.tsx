@@ -6,12 +6,7 @@ const Projects = () => {
     {
       title: 'Svara',
       description: 'A modern, feature-rich music player built with React, Python, and Electron that streams music from YouTube with a beautiful, responsive interface.',
-      tech: [
-        { name: 'Python', percentage: 56.1 },
-        { name: 'JavaScript', percentage: 39.9 },
-        { name: 'CSS', percentage: 2.2 },
-        { name: 'HTML', percentage: 1.8 }
-      ],
+      tech: ['React.js', 'Electron', 'Python', 'FastAPI'],
       github: 'https://github.com/Swapnanilb/Svara',
       demo: 'https://thunderer44.github.io/Svara-website/',
       image: `${process.env.PUBLIC_URL}/assets/Svara_Logo.png`
@@ -19,10 +14,7 @@ const Projects = () => {
     {
       title: 'Projex',
       description: 'A modern desktop project manager that helps you organize, tag, and instantly find local folders — designed for developers, creators, and teams.',
-      tech: [
-        { name: 'JavaScript', percentage: 98.4 },
-        { name: 'HTML/CSS', percentage: 1.6 }
-      ],
+      tech: ['React.js', 'Electron', 'SQLite'],
       github: 'https://github.com/Swapnanilb/Projex',
       demo: null,
       image: `${process.env.PUBLIC_URL}/assets/Projex_Logo.png`
@@ -30,11 +22,7 @@ const Projects = () => {
     {
       title: 'Guess-Em-All',
       description: '🎮 A Pokémon silhouette guessing game with Pokédex, rarity system, and animated gameplay — built using React, Tailwind & Framer Motion.',
-      tech: [
-        { name: 'JavaScript', percentage: 96.4 },
-        { name: 'CSS', percentage: 2.9 },
-        { name: 'HTML', percentage: 0.7 }
-      ],
+      tech: ['React.js', 'Node.js', 'MongoDB'],
       github: 'https://github.com/Swapnanilb/Guess-Em-All',
       demo: null,
       image: `${process.env.PUBLIC_URL}/assets/Guess-Em-All_Logo.png`
@@ -80,33 +68,14 @@ const Projects = () => {
                 <div className="mb-4 flex-grow">
                   <h4 className="text-accent text-sm font-semibold mb-2">Tech Stack:</h4>
                   
-                  {/* Mobile: GitHub-style tags */}
-                  <div className="md:hidden flex flex-wrap gap-1.5">
+                  <div className="flex flex-wrap gap-1.5">
                     {project.tech.map((tech) => (
                       <span 
-                        key={tech.name}
+                        key={tech}
                         className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-accent/10 text-accent border border-accent/20"
                       >
-                        {tech.name}
+                        {tech}
                       </span>
-                    ))}
-                  </div>
-                  
-                  {/* Desktop: Progress bars */}
-                  <div className="hidden md:block space-y-2">
-                    {project.tech.map((tech) => (
-                      <div key={tech.name} className="flex items-center justify-between">
-                        <span className="text-secondary/80 text-xs font-medium">{tech.name}</span>
-                        <div className="flex items-center gap-2">
-                          <div className="w-16 h-1.5 bg-secondary/20 rounded-full overflow-hidden">
-                            <div 
-                              className="h-full bg-gradient-to-r from-accent to-accent-green rounded-full transition-all duration-1000"
-                              style={{ width: `${tech.percentage}%` }}
-                            ></div>
-                          </div>
-                          <span className="text-accent text-xs font-semibold min-w-[35px] text-right">{tech.percentage}%</span>
-                        </div>
-                      </div>
                     ))}
                   </div>
                 </div>

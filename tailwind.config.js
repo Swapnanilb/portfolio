@@ -6,10 +6,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#222831',
-        secondary: '#EEEEEE',
-        accent: '#00D9FF',
-        'accent-green': '#00FF88',
+        primary: '#0D1117',
+        secondary: '#E6EDF3',
+        accent: '#58A6FF',
+        'accent-coral': '#FF7B72',
+        'card-bg': '#161B22',
       },
       fontFamily: {
         'inter': ['Inter', 'sans-serif'],
@@ -20,8 +21,8 @@ module.exports = {
       },
       keyframes: {
         glow: {
-          '0%': { boxShadow: '0 0 5px #00D9FF, 0 0 10px #00D9FF, 0 0 15px #00D9FF' },
-          '100%': { boxShadow: '0 0 10px #00D9FF, 0 0 20px #00D9FF, 0 0 30px #00D9FF' },
+          '0%': { boxShadow: '0 0 5px #58A6FF, 0 0 10px #58A6FF, 0 0 15px #58A6FF' },
+          '100%': { boxShadow: '0 0 10px #58A6FF, 0 0 20px #58A6FF, 0 0 30px #58A6FF' },
         }
       }
     },

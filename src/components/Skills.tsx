@@ -3,11 +3,18 @@ import { motion } from 'framer-motion';
 
 const Skills = () => {
   const skills = [
-    { name: 'JavaScript/TypeScript', level: 90, icon: '⚡' },
-    { name: 'React/Next.js', level: 85, icon: '⚛️' },
-    { name: 'Node.js/Express', level: 80, icon: '🟢' },
-    { name: 'Python/Django', level: 75, icon: '🐍' },
-    { name: 'UI/UX Design', level: 30, icon: '🎨' }
+    { name: 'JavaScript', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
+    { name: 'TypeScript', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg' },
+    { name: 'React', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
+    { name: 'Node.js', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg' },
+    { name: 'Python', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' },
+    { name: 'Django', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg' },
+    { name: 'Electron', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/electron/electron-original.svg' },
+    { name: 'HTML5', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg' },
+    { name: 'CSS3', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg' },
+    { name: 'TailwindCSS', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg' },
+    { name: 'Git', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg' },
+    { name: 'MongoDB', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg' }
   ];
 
   const softSkills = [
@@ -37,34 +44,23 @@ const Skills = () => {
             viewport={{ once: true }}
           >
             <h3 className="text-2xl font-semibold mb-8 text-accent">Technical Skills</h3>
-            <div className="space-y-6">
+            <div className="grid grid-cols-3 md:grid-cols-4 gap-6">
               {skills.map((skill, index) => (
                 <motion.div
                   key={skill.name}
-                  initial={{ opacity: 0, x: -30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  initial={{ opacity: 0, scale: 0 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  whileHover={{ scale: 1.1, y: -5 }}
                   viewport={{ once: true }}
-                  className="relative"
+                  className="bg-card-bg border border-secondary/10 rounded-lg p-4 text-center hover:bg-accent/10 hover:border-accent/30 transition-all duration-300 cursor-pointer group"
                 >
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="flex items-center gap-2 text-secondary font-medium">
-                      <span className="text-xl">{skill.icon}</span>
-                      {skill.name}
-                    </span>
-                    <span className="text-accent font-semibold">{skill.level}%</span>
-                  </div>
-                  <div className="w-full bg-secondary/10 rounded-full h-3">
-                    <motion.div
-                      initial={{ width: 0 }}
-                      whileInView={{ width: `${skill.level}%` }}
-                      transition={{ duration: 1, delay: index * 0.1 }}
-                      viewport={{ once: true }}
-                      className="bg-gradient-to-r from-accent to-accent-green h-3 rounded-full relative overflow-hidden"
-                    >
-                      <div className="absolute inset-0 bg-white/20 animate-pulse"></div>
-                    </motion.div>
-                  </div>
+                  <img 
+                    src={skill.logo} 
+                    alt={skill.name}
+                    className="w-12 h-12 mx-auto mb-3 group-hover:scale-110 transition-transform duration-300"
+                  />
+                  <span className="text-secondary font-medium text-sm">{skill.name}</span>
                 </motion.div>
               ))}
             </div>
