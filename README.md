@@ -44,7 +44,3 @@ A modern, responsive developer portfolio showcasing my projects and skills. Buil
 - **Email**: swapnanilb02@gmail.com
 - **GitHub**: [Swapnanilb](https://github.com/Swapnanilb)
 - **LinkedIn**: [swapnanil02](https://www.linkedin.com/in/swapnanil02/)
-
-## 📄 License
-
-MIT License - feel free to use this project as inspiration for your own portfolio!
