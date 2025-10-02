@@ -1,15 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const Projects = () => {
+  const [activeTab, setActiveTab] = useState('all');
+
   const projects = [
+    {
+      title: 'QuickLinkr',
+      description: 'A modern URL shortener with analytics, QR codes, bulk processing, and custom short codes. Features real-time click tracking and comprehensive dashboard.',
+      tech: ['FastAPI', 'SQLAlchemy', 'JavaScript', 'SQLite'],
+      github: 'https://github.com/Swapnanilb/QuickLinkr',
+      demo: '/projects/quicklinkr',
+      image: `${process.env.PUBLIC_URL}/assets/QuickLinkr.png`,
+      category: 'backend'
+    },
     {
       title: 'Svara',
       description: 'A modern, feature-rich music player built with React, Python, and Electron that streams music from YouTube with a beautiful, responsive interface.',
       tech: ['React.js', 'Electron', 'Python', 'FastAPI'],
       github: 'https://github.com/Swapnanilb/Svara',
       demo: 'https://thunderer44.github.io/Svara-website/',
-      image: `${process.env.PUBLIC_URL}/assets/Svara_Logo.png`
+      image: `${process.env.PUBLIC_URL}/assets/Svara_Logo.png`,
+      category: 'fullstack'
     },
     {
       title: 'Projex',
@@ -17,7 +30,8 @@ const Projects = () => {
       tech: ['React.js', 'Electron', 'SQLite'],
       github: 'https://github.com/Swapnanilb/Projex',
       demo: null,
-      image: `${process.env.PUBLIC_URL}/assets/Projex_Logo.png`
+      image: `${process.env.PUBLIC_URL}/assets/Projex_Logo.png`,
+      category: 'frontend'
     },
     {
       title: 'Guess-Em-All',
@@ -25,8 +39,18 @@ const Projects = () => {
       tech: ['React.js', 'Node.js', 'MongoDB'],
       github: 'https://github.com/Swapnanilb/Guess-Em-All',
       demo: null,
-      image: `${process.env.PUBLIC_URL}/assets/Guess-Em-All_Logo.png`
+      image: `${process.env.PUBLIC_URL}/assets/Guess-Em-All_Logo.png`,
+      category: 'fullstack'
     }
+  ];
+
+  const filteredProjects = activeTab === 'all' ? projects : projects.filter(project => project.category === activeTab);
+
+  const tabs = [
+    { id: 'all', label: 'All' },
+    { id: 'frontend', label: 'Frontend' },
+    { id: 'backend', label: 'Backend' },
+    { id: 'fullstack', label: 'Full-Stack' }
   ];
 
   return (
@@ -43,8 +67,33 @@ const Projects = () => {
           <div className="w-20 h-1 bg-accent mx-auto"></div>
         </motion.div>
 
+        {/* Tabs */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="flex justify-center mb-12"
+        >
+          <div className="inline-flex bg-secondary/10 rounded-lg p-1 border border-secondary/20">
+            {tabs.map((tab) => (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id)}
+                className={`px-6 py-2 rounded-md text-sm font-medium transition-all duration-300 ${
+                  activeTab === tab.id
+                    ? 'bg-accent text-primary shadow-lg'
+                    : 'text-secondary/70 hover:text-secondary hover:bg-secondary/5'
+                }`}
+              >
+                {tab.label}
+              </button>
+            ))}
+          </div>
+        </motion.div>
+
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
+          {filteredProjects.map((project, index) => (
             <motion.div
               key={project.title}
               initial={{ opacity: 0, y: 50 }}
@@ -90,14 +139,23 @@ const Projects = () => {
                     GitHub
                   </a>
                   {project.demo ? (
-                    <a
-                      href={project.demo}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex-1 py-2 px-3 bg-accent text-primary text-center rounded-lg text-sm font-semibold hover:bg-accent/80 transition-all duration-300"
-                    >
-                      Demo
-                    </a>
+                    project.demo.startsWith('/') ? (
+                      <Link
+                        to={project.demo}
+                        className="flex-1 py-2 px-3 bg-accent text-primary text-center rounded-lg text-sm font-semibold hover:bg-accent/80 transition-all duration-300"
+                      >
+                        Demo
+                      </Link>
+                    ) : (
+                      <a
+                        href={project.demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1 py-2 px-3 bg-accent text-primary text-center rounded-lg text-sm font-semibold hover:bg-accent/80 transition-all duration-300"
+                      >
+                        Demo
+                      </a>
+                    )
                   ) : (
                     <span className="flex-1 py-2 px-3 bg-secondary/10 text-secondary/40 text-center rounded-lg text-sm font-semibold cursor-not-allowed">
                       N/A

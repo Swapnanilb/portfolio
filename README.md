@@ -11,11 +11,14 @@ A modern, responsive developer portfolio showcasing my projects and skills. Buil
 - **Smooth Animations**: Powered by Framer Motion
 - **Interactive Elements**: Hover effects and scroll animations
 - **Contact Form**: Direct Gmail integration
-- **Project Showcase**: Real project data with tech stack percentages
+- **Project Showcase**: Categorized projects with filtering tabs
+- **Project Details**: Dedicated pages with screenshots and videos
+- **Routing**: Multi-page navigation with React Router
 
 ## 🛠️ Tech Stack
 
 - **Frontend**: React 18 + TypeScript
+- **Routing**: React Router DOM
 - **Styling**: TailwindCSS
 - **Animations**: Framer Motion
 - **Deployment**: GitHub Pages
@@ -26,10 +29,18 @@ A modern, responsive developer portfolio showcasing my projects and skills. Buil
 
 - **Hero**: Landing with animated background
 - **About**: Bio with code snippet card and expandable content
-- **Projects**: Square cards with tech stack percentages
+- **Projects**: Tabbed project showcase (All, Frontend, Backend, Full-Stack)
+- **Project Details**: Individual project pages with comprehensive information
 - **Skills**: Animated progress bars
 - **Contact**: Gmail-integrated contact form
 - **Footer**: Social links and quick navigation
+
+## 🚀 Featured Projects
+
+- **QuickLinkr**: URL shortener with analytics and QR codes (FastAPI + SQLAlchemy)
+- **Svara**: Music player with YouTube streaming (React + Electron + Python)
+- **Projex**: Desktop project manager (React + Electron + SQLite)
+- **Guess-Em-All**: Pokémon guessing game (React + Node.js + MongoDB)
 
 ## 🎨 Color Scheme
 
@@ -38,6 +49,25 @@ A modern, responsive developer portfolio showcasing my projects and skills. Buil
 - **Primary Accent**: #58A6FF (Soft blue)
 - **Secondary Accent**: #FF7B72 (Warm coral)
 - **Text**: #E6EDF3 (Off-white)
+
+## 🚀 Getting Started
+
+```bash
+# Clone the repository
+git clone https://github.com/Swapnanilb/portfolio.git
+
+# Install dependencies
+npm install
+
+# Start development server
+npm start
+
+# Build for production
+npm run build
+
+# Deploy to GitHub Pages
+npm run deploy
+```
 
 ## 📧 Contact
 
