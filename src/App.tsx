@@ -8,6 +8,7 @@ import Skills from './components/Skills';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import QuickLinkrProject from './components/QuickLinkrProject';
+import SnipVaultProject from './components/SnipVaultProject';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
             </>
           } />
           <Route path="/projects/quicklinkr" element={<QuickLinkrProject />} />
+          <Route path="/projects/snipvault" element={<SnipVaultProject />} />
         </Routes>
       </div>
     </Router>

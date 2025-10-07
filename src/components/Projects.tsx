@@ -7,6 +7,15 @@ const Projects = () => {
 
   const projects = [
     {
+      title: 'SnipVault',
+      description: 'A powerful Chrome extension for developers to save, manage, and organize code snippets with syntax highlighting, smart search, and one-click copy functionality.',
+      tech: ['JavaScript', 'Chrome APIs', 'Prism.js', 'HTML5', 'CSS3'],
+      github: 'https://github.com/Swapnanilb/SnipVault',
+      demo: '/projects/snipvault',
+      image: `${process.env.PUBLIC_URL}/assets/SnipVault_Logo.png`,
+      category: 'frontend'
+    },
+    {
       title: 'QuickLinkr',
       description: 'A modern URL shortener with analytics, QR codes, bulk processing, and custom short codes. Features real-time click tracking and comprehensive dashboard.',
       tech: ['FastAPI', 'SQLAlchemy', 'JavaScript', 'SQLite'],
