@@ -6,11 +6,8 @@ const Hero = () => {
     document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const downloadResume = () => {
-    const link = document.createElement('a');
-    link.href = `${process.env.PUBLIC_URL}/assets/Resume/Swapnanil Basak's Resume.pdf`;
-    link.download = "Swapnanil_Basak_Resume.pdf";
-    link.click();
+  const viewResume = () => {
+    window.open(`${process.env.PUBLIC_URL}/assets/Resume/Swapnanil Basak's Resume.pdf`, '_blank');
   };
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-primary">
@@ -52,10 +49,10 @@ const Hero = () => {
           className="flex flex-col sm:flex-row gap-4 justify-center"
         >
           <button 
-            onClick={downloadResume}
+            onClick={viewResume}
             className="px-8 py-3 bg-accent text-primary font-semibold rounded-lg hover:bg-accent/80 transition-all duration-300 hover:shadow-lg hover:shadow-accent/25"
           >
-            Download Resume
+            View Resume
           </button>
           <button 
             onClick={scrollToContact}
